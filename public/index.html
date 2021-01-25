@@ -10,7 +10,10 @@
 	<link rel='stylesheet' href='/global.css'>
 	<link rel='stylesheet' href='/build/bundle.css'>
 
-	<script defer src='/build/bundle.js'></script>
+	<script type="module">
+		const str = '/build/bundle.js'
+		import(str)
+	</script>
 </head>
 
 <body>
