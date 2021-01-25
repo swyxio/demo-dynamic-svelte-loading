@@ -10,9 +10,17 @@
 	<link rel='stylesheet' href='/global.css'>
 	<link rel='stylesheet' href='/build/bundle.css'>
 
-	<script type="module">
-		const str = '/build/bundle.js'
-		import(str)
+	<script>
+		(async () => {
+			const str = '/build/bundle.js'
+			const App = (await import(str)).default
+			new App({
+				target: document.body,
+				props: {
+					name: 'world'
+				}
+			});
+		})()
 	</script>
 </head>
 
